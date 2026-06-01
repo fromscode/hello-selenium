@@ -10,11 +10,13 @@ public class Main {
         WebDriver driver = new ChromeDriver();
         driver.get("http://opencart.com");
 
-        var title = driver.getTitle();
+        String title = driver.getTitle();
 
         if (title.contains("OpenCart")) {
             System.out.println("Test passed");
         }
         else System.out.println("Test failed");
+
+        driver.quit();
     }
 }
