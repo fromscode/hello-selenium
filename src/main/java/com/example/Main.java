@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,11 +23,9 @@ public class Main {
             } else
                 System.out.println("Test failed");
 
-            WebElement element = driver.findElement(By.cssSelector("a.btn-link"));
+           List<WebElement> elements = driver.findElements(By.cssSelector("ul.nav > *"));
 
-            System.out.println(element.getAccessibleName());
-
-            driver.findElement(By.linkText("Features")).click();
+           System.out.println(elements.size());
         } catch (Exception e) {
             System.out.print(e.getMessage());
         } finally {
