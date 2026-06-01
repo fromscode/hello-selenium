@@ -15,17 +15,11 @@ public class Main {
         try {
             driver.get("http://opencart.com");
 
-            String title = driver.getTitle();
+            List<WebElement> elements = driver.findElements(By.xpath("//*[contains(text(), 'OpenCart')]"));
 
-            assert title != null;
-            if (title.contains("OpenCart")) {
-                System.out.println("Test passed");
-            } else
-                System.out.println("Test failed");
+            System.out.println(elements.size());
 
-           List<WebElement> elements = driver.findElements(By.cssSelector("ul.nav > *"));
 
-           System.out.println(elements.size());
         } catch (Exception e) {
             System.out.print(e.getMessage());
         } finally {
