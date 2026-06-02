@@ -20,9 +20,9 @@ public class FluentWaitDemo {
 
         driver.get("https://a4boxd.onrender.com");
 
-        WebElement searchBox = wait.until((WebDriver driver1) -> driver1.findElement(By.xpath("//*[@id=\"search\"]")));
+        WebElement searchBox = wait.until((driver1) -> driver1.findElement(By.xpath("//*[@id=\"search\"]")));
         searchBox.sendKeys("Blood");
 
-        wait.until((WebDriver driver1) -> driver.findElement(By.xpath("/html/body/nav/div/form/button"))).click();
+        wait.until((driver1) -> driver1.findElement(By.xpath("/html/body/nav/div/form/button"))).click();
     }
 }

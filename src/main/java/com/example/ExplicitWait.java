@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExplicitWait {
@@ -14,7 +15,7 @@ public class ExplicitWait {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         driver.get("https://a4boxd.onrender.com");
         WebElement search = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"search\"]")));
